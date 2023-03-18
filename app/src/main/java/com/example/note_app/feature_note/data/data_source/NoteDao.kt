@@ -4,11 +4,16 @@ import androidx.room.*
 import com.example.note_app.feature_note.domain.model.Note
 import kotlinx.coroutines.flow.Flow
 
+/**
+ * This class represents the DAO (Data access object) from the Room db and defines the (permitted) methods to read
+ * and write from the database.
+ */
 @Dao
 interface NoteDao {
 
     /**
      * This method extracts all notes from the db.
+     * @return returns the list of all notes currently in the database
      */
     @Query("SELECT * FROM note")
     fun getNotes(): Flow<List<Note>>
@@ -16,6 +21,7 @@ interface NoteDao {
     /**
      * This async method extracts a specific note from the db to view or edit, based on the id.
      * @param id is the _id of the note to be viewed or edited
+     * @return returns a note with the corresponding id if it exists, otherwise null
      */
     @Query("SELECT * FROM note WHERE _id = :id")
     suspend fun getNoteById(id: Int): Note?
