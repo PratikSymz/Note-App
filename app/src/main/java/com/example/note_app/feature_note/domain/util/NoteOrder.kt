@@ -18,4 +18,15 @@ sealed class NoteOrder(val orderType: OrderType) {
         Order by 'Color', ASC or DESC
      */
     class Color(orderType: OrderType) : NoteOrder(orderType)
+
+    /*
+        Copy function to return a new NoteOrder using the provided OrderType
+     */
+    fun copy(orderType: OrderType): NoteOrder {
+        return when (this) {
+            is Title -> Title(orderType)
+            is Date -> Date(orderType)
+            is Color -> Color(orderType)
+        }
+    }
 }

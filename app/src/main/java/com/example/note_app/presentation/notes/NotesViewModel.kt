@@ -76,6 +76,9 @@ class NotesViewModel @Inject constructor(
         }
     }
 
+    /*
+        Initiate a coroutine to load the notes in the specified order everytime it changes.
+     */
     private fun getNotes(noteOrder: NoteOrder) {
         getNotesJob?.cancel()
         getNotesJob = noteUseCases.getNotes(noteOrder)
