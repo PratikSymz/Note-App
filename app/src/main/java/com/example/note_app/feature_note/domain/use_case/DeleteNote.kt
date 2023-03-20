@@ -12,6 +12,7 @@ class DeleteNote(
 
     /**
      * This async function deletes the note from the note repository.
+     * @param note is the note to be deleted
      */
     suspend operator fun invoke(note: Note) {
         repository.deleteNote(note)

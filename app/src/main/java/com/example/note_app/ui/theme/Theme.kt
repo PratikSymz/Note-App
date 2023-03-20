@@ -14,7 +14,7 @@ private val DarkColorPalette = darkColors(
 )
 
 @Composable
-fun MVVM_TodoListTheme(darkTheme: Boolean = true, content: @Composable () -> Unit) {
+fun NoteAppTheme(darkTheme: Boolean = true, content: @Composable () -> Unit) {
     MaterialTheme(
         colors = DarkColorPalette,
         typography = Typography,

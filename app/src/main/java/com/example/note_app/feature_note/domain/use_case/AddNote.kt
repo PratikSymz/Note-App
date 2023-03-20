@@ -13,6 +13,7 @@ class AddNote(
 
     /**
      * This async function inserts a note into the note repository.
+     * @param note is the note to be inserted
      * @throws InvalidNoteException in case the note has invalid fields
      */
     @Throws(InvalidNoteException::class)

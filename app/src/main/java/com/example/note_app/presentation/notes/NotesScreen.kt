@@ -18,6 +18,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.note_app.presentation.notes.NotesEvent
 import com.example.note_app.presentation.notes.NotesViewModel
+import com.example.note_app.presentation.util.Screens
 import kotlinx.coroutines.launch
 
 @Composable
@@ -39,19 +40,20 @@ fun NotesScreen(
         // FAB at bottom to add new note
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { },
+                onClick = { navController.navigate(Screens.AddEditNotesScreen.route) },
                 backgroundColor = MaterialTheme.colors.primary
             ) {
                 Icon(imageVector = Icons.Default.Add, contentDescription = "Add note")
             }
         },
         scaffoldState = scaffoldState,
-    ) {
+    ) { padding ->
         // 1 Column for entire screen
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(it)
+                .padding(padding)
+                .padding(16.dp)
         ) {
             // R1: Heading and 'show filters' button
             Row(
@@ -76,7 +78,7 @@ fun NotesScreen(
                 OrderingSection(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(vertical = 16.dp),
+                        .padding(vertical = 8.dp),
                     noteOrder = state.noteOrder,
                     onOrderChange = {
                         viewModel.onEvent(NotesEvent.Order(it))
@@ -93,7 +95,12 @@ fun NotesScreen(
                         note = note,
                         modifier = Modifier
                             .fillMaxWidth()
-                            .clickable { /* TODO */ },
+                            .clickable {
+                                navController.navigate(
+                                    Screens.AddEditNotesScreen.route
+                                            + "?noteI=${note._id}&noteColor=${note.color}"
+                                )
+                            },
                         onDeleteClick = {
                             // Delete the note
                             viewModel.onEvent(NotesEvent.DeleteNote(note))
