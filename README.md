@@ -1,0 +1,1 @@
+![alt text](https://github.com/PratikSymz/Note-App/blob/main/app/src/main/res/screen_captures/add_edit_note.png?raw=true)
