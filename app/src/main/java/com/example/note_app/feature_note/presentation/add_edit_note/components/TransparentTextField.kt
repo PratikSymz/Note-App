@@ -1,4 +1,4 @@
-package com.example.note_app.presentation.add_edit_note.components
+package com.example.note_app.feature_note.presentation.add_edit_note.components
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth

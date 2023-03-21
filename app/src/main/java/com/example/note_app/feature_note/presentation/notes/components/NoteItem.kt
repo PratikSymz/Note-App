@@ -1,4 +1,4 @@
-package com.example.note_app.presentation.notes.components
+package com.example.note_app.feature_note.presentation.notes.components
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.*

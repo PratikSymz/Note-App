@@ -1,4 +1,4 @@
-package com.example.note_app.presentation.add_edit_note
+package com.example.note_app.feature_note.presentation.add_edit_note
 
 /**
  * This class represents a text field's state inside the add/edit screen of a note

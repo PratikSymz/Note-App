@@ -1,4 +1,4 @@
-package com.example.note_app.presentation.add_edit_note
+package com.example.note_app.feature_note.presentation.add_edit_note
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
